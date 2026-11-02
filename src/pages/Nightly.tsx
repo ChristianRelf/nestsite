@@ -201,7 +201,7 @@ const SPELL: { text: string; dim?: boolean }[] = [
   { text: 'Every night, while the jits sleep,' },
   { text: 'the newest code is gathered up' },
   { text: 'and built in the dark,' },
-  { text: 'left out here for whoever comes looking.', dim: true },
+  { text: 'left for whoever comes looking.', dim: true },
 ];
 
 /** Each line rises out from behind its own edge, one after another, the first time it comes into view. */
