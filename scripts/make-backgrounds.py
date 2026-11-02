@@ -4,7 +4,12 @@
 
 Reads src/assets/hills.avif and writes src/assets/hero-abstract.avif and
 src/assets/footer-abstract.avif. Grain is added live in CSS, not baked in.
+
+    python scripts/make-backgrounds.py nightly
+
+Turns src/assets/nebula.avif into src/assets/nightly-abstract.avif for the /nightly hero.
 """
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -62,5 +67,15 @@ def main():
         print(name, (ASSETS / name).stat().st_size // 1024, 'KB')
 
 
+def nightly():
+    src = Image.open(ASSETS / 'nebula.avif').convert('RGB')
+    src = src.resize((2200, round(2200 * src.height / src.width)), Image.LANCZOS)
+    out = finish(warp(src, seed=7, amount=220, passes=3), blur=18, sat=1.4, contrast=1.2)
+    # The nebula is pale; darken it so white text sits on it like the home hero.
+    out = ImageEnhance.Brightness(out).enhance(0.62)
+    out.save(ASSETS / 'nightly-abstract.avif', quality=70)
+    print('nightly-abstract.avif', (ASSETS / 'nightly-abstract.avif').stat().st_size // 1024, 'KB')
+
+
 if __name__ == '__main__':
-    main()
+    nightly() if sys.argv[1:] == ['nightly'] else main()

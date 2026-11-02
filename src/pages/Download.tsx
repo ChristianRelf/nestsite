@@ -52,10 +52,10 @@ function CopyLine({ cmd, prompt = '$' }: { cmd: string; prompt?: string }) {
 
 /* ---------------- Confetti, but jits ---------------- */
 
-type Pop = { id: number; x: number; y: number; jits: { shape: Shape; color: string; dx: number; up: number; down: number; spin: number; size: number; t: number }[] };
+export type Pop = { id: number; x: number; y: number; jits: { shape: Shape; color: string; dx: number; up: number; down: number; spin: number; size: number; t: number }[] };
 let popId = 0;
 
-function makePop(x: number, y: number): Pop {
+export function makePop(x: number, y: number): Pop {
   return {
     id: popId++,
     x,
@@ -73,7 +73,7 @@ function makePop(x: number, y: number): Pop {
   };
 }
 
-function Pops({ pops }: { pops: Pop[] }) {
+export function Pops({ pops }: { pops: Pop[] }) {
   return (
     <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden" aria-hidden="true">
       {pops.map((p) =>
@@ -108,7 +108,7 @@ const PEEKERS: { shape: Shape; color: string; eyes: Eyes }[] = [
   { shape: 'diamond', color: '#8b5cf6', eyes: 'sleepy' },
 ];
 
-function GetButton({ build, onGet }: { build: Build; onGet: (b: Build, e: MouseEvent<HTMLElement>) => void }) {
+export function GetButton({ build, onGet }: { build: Build; onGet: (b: Build, e: MouseEvent<HTMLElement>) => void }) {
   const reduced = useReducedMotion();
   const [hover, setHover] = useState(false);
   const [done, setDone] = useState(false);
@@ -275,7 +275,7 @@ function Hero({ release, primary, os, others, onGet }: { release: Release; prima
 
 /* ---------------- Platforms ---------------- */
 
-function PlatformCard({ build, mine, onGet, i }: { build: Build; mine: boolean; onGet: (b: Build, e: MouseEvent<HTMLElement>) => void; i: number }) {
+export function PlatformCard({ build, mine, onGet, i }: { build: Build; mine: boolean; onGet: (b: Build, e: MouseEvent<HTMLElement>) => void; i: number }) {
   const { platform, asset } = build;
   const [hop, setHop] = useState(0);
   const [happy, setHappy] = useState(false);
@@ -546,7 +546,7 @@ function Verify({ list }: { list: Build[] }) {
 
 /* ---------------- Release notes ---------------- */
 
-function Notes({ release }: { release: Release }) {
+export function Notes({ release }: { release: Release }) {
   const { intro, sections: all } = useMemo(() => sections(release.body), [release.body]);
   // The downloads table is the cards above, so leave it out; housekeeping goes last so the good stuff shows first.
   const later = (t: string) => /^(requirements?|notes?|known issues)$/i.test(t.trim());
@@ -656,7 +656,7 @@ function Older({ releases }: { releases: Release[] }) {
 
 /* ---------------- After you click ---------------- */
 
-function Started({ build, onClose }: { build: Build | null; onClose: () => void }) {
+export function Started({ build, onClose, next = "#start" }: { build: Build | null; onClose: () => void; next?: string }) {
   useEffect(() => {
     if (!build) return;
     const t = setTimeout(onClose, 9000);
@@ -685,7 +685,7 @@ function Started({ build, onClose }: { build: Build | null; onClose: () => void 
               </a>
             </div>
           </div>
-          <a href="#start" onClick={onClose} className="hidden h-9 shrink-0 items-center gap-1.5 rounded-full bg-ink px-4 text-[13px] font-semibold text-bg transition hover:bg-white sm:inline-flex">
+          <a href={next} onClick={onClose} className="hidden h-9 shrink-0 items-center gap-1.5 rounded-full bg-ink px-4 text-[13px] font-semibold text-bg transition hover:bg-white sm:inline-flex">
             Next steps <ArrowDown className="h-3.5 w-3.5" />
           </a>
           <button type="button" onClick={onClose} aria-label="Dismiss" className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-faint transition hover:bg-white/5 hover:text-ink">

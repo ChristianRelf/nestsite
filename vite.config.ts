@@ -3,10 +3,16 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 /** Pages that live in their own folder. */
-const PAGES = ['jits', 'download', 'connect'];
+const PAGES = ['jits', 'download', 'connect', 'nightly'];
 
 /** /jits → /jits/ locally, like a static host does for a folder. */
 const slash: Connect.NextHandleFunction = (req, res, next) => {
+  if (req.url === '/beta' || req.url?.startsWith('/beta/') || req.url?.startsWith('/beta?')) {
+    res.statusCode = 302;
+    res.setHeader('Location', '/nightly/');
+    res.end();
+    return;
+  }
   const page = PAGES.find((p) => req.url === `/${p}` || req.url?.startsWith(`/${p}?`));
   if (page && req.url) {
     res.statusCode = 301;

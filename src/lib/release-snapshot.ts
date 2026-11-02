@@ -47,5 +47,51 @@ export const SNAPSHOT: Release[] = [
         "digest": "sha256:11a052353fcc6f0a1e597a34afef01d66ec9487994a729b5513aadf2ad20b052"
       }
     ]
+  },
+  {
+    "tag": "v0.1.0-nightly.20261102.21",
+    "name": "Nest v0.1.0-nightly.20261102.21",
+    "publishedAt": "2026-11-02T04:08:43Z",
+    "url": "https://github.com/UseNestBot/Nest-Bot/releases/tag/v0.1.0-nightly.20261102.21",
+    "prerelease": true,
+    "body": "## What's Changed\n* Fix copy buttons in the desktop app by @Chimppppy in https://github.com/UseNestBot/Nest-Bot/pull/1\n* Add contribution guides and GitHub community templates by @ChristianRelf in https://github.com/UseNestBot/Nest-Bot/pull/2\n* Relicense under GPL-3.0-only by @Chimppppy in https://github.com/UseNestBot/Nest-Bot/pull/9\n* Add nightly prerelease builds by @ChristianRelf in https://github.com/UseNestBot/Nest-Bot/pull/10\n* Let users steer a running agent by @ChristianRelf in https://github.com/UseNestBot/Nest-Bot/pull/11\n* Settings: faster saves, more appearance options, more configuration by @ChristianRelf in https://github.com/UseNestBot/Nest-Bot/pull/12\n* Use the full width on phones by @Chimppppy in https://github.com/UseNestBot/Nest-Bot/pull/13\n* Close agent permission escalations and fix Claude turns that never stop by @ChristianRelf in https://github.com/UseNestBot/Nest-Bot/pull/14\n\n## New Contributors\n* @Chimppppy made their first contribution in https://github.com/UseNestBot/Nest-Bot/pull/1\n* @ChristianRelf made their first contribution in https://github.com/UseNestBot/Nest-Bot/pull/2\n\n**Full Changelog**: https://github.com/UseNestBot/Nest-Bot/compare/v0.1.0...v0.1.0-nightly.20261102.21",
+    "assets": [
+      {
+        "name": "latest-linux.yml",
+        "size": 511,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/latest-linux.yml",
+        "digest": "sha256:0119afbbb1a4d5cfd264193a98da976fa4965ccdab5161988c53eaefa5feb312"
+      },
+      {
+        "name": "latest.yml",
+        "size": 345,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/latest.yml",
+        "digest": "sha256:7b41fab0d209a9dbf2418eabf5c97d30f43cdc4c58011298fe852ad003e79519"
+      },
+      {
+        "name": "Nest-0.1.0.AppImage",
+        "size": 133231686,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/Nest-0.1.0.AppImage",
+        "digest": "sha256:f79f218631676c4a306ca35b135c646e8b44b241e23a1874efa405e50f56e371"
+      },
+      {
+        "name": "Nest-Setup-0.1.0-b21.exe",
+        "size": 125997418,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/Nest-Setup-0.1.0-b21.exe",
+        "digest": "sha256:61ea277d02f8e0923292e1dfdc869c99b51e9663ca65bfcfde81747362edc5e4"
+      },
+      {
+        "name": "Nest-Setup-0.1.0-b21.exe.blockmap",
+        "size": 132552,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/Nest-Setup-0.1.0-b21.exe.blockmap",
+        "digest": "sha256:68e05f21b8de5925ff2ff4ea010e28822eda24187e1fc24be5768623b57b3914"
+      },
+      {
+        "name": "nest_0.1.0_amd64.deb",
+        "size": 105897780,
+        "url": "https://github.com/UseNestBot/Nest-Bot/releases/download/v0.1.0-nightly.20261102.21/nest_0.1.0_amd64.deb",
+        "digest": "sha256:aad8c7b09d818bce7b5d33ec9f3f964e43ce47410da541c12837efeaa1fbc30b"
+      }
+    ]
   }
 ];

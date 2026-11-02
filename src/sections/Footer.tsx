@@ -24,6 +24,7 @@ const COLUMNS = [
       ['Download', 'download/'],
       ['Nest Connect', 'connect/'],
       ['Meet the jits', 'jits/'],
+      ['Nightly builds', 'nightly/'],
     ],
   },
   {
