@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { Mascot } from '../components/Mascot';
-import { GitHubIcon } from '../components/icons';
-import { REPO } from '../lib/links';
+import { DiscordIcon, GitHubIcon } from '../components/icons';
+import { DISCORD, REPO } from '../lib/links';
 
 const LINKS = [
   ['How it works', '#orchestra'],
@@ -44,10 +44,19 @@ export function Nav() {
           ))}
         </div>
         <a
+          href={DISCORD}
+          target="_blank"
+          rel="noopener"
+          aria-label="Discord"
+          className={`ml-auto flex h-9 w-9 items-center justify-center rounded-full transition md:ml-0 ${scrolled ? 'text-muted hover:bg-white/5 hover:text-ink' : 'text-[#0b1a3c]/70 hover:bg-black/5 hover:text-[#0b1a3c]'}`}
+        >
+          <DiscordIcon className="h-[18px] w-[18px]" />
+        </a>
+        <a
           href={REPO}
           target="_blank"
           rel="noopener"
-          className={`ml-auto flex h-9 items-center gap-2 rounded-full px-4 text-[14px] font-medium transition md:ml-0 ${scrolled ? 'bg-white/[0.06] text-ink ring-1 ring-white/10 hover:bg-white/10' : 'bg-[#0b1a3c] text-white hover:bg-[#13285a]'}`}
+          className={`flex h-9 items-center gap-2 rounded-full px-4 text-[14px] font-medium transition ${scrolled ? 'bg-white/[0.06] text-ink ring-1 ring-white/10 hover:bg-white/10' : 'bg-[#0b1a3c] text-white hover:bg-[#13285a]'}`}
         >
           <GitHubIcon className="h-4 w-4" />
           GitHub

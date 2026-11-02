@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft } from 'lucide-react';
 import { Mascot } from './Mascot';
-import { GitHubIcon } from './icons';
+import { DiscordIcon, GitHubIcon } from './icons';
 import { ease } from './ui';
-import { REPO } from '../lib/links';
+import { DISCORD, REPO } from '../lib/links';
 
 /** Pill nav for pages that live one folder down (/jits, /download). */
 export function SubNav({ label, home = '../', action }: { label: string; home?: string; action?: ReactNode }) {
@@ -25,13 +25,22 @@ export function SubNav({ label, home = '../', action }: { label: string; home?: 
         <a href={home} className="ml-auto hidden items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[14px] text-muted transition hover:bg-white/5 hover:text-ink sm:flex">
           <ArrowLeft className="h-3.5 w-3.5" /> Back to Nest
         </a>
+        <a
+          href={DISCORD}
+          target="_blank"
+          rel="noopener"
+          aria-label="Discord"
+          className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-white/5 hover:text-ink sm:ml-0"
+        >
+          <DiscordIcon className="h-[18px] w-[18px]" />
+        </a>
         {action ?? (
           <a
             href={REPO}
             target="_blank"
             rel="noopener"
             aria-label="GitHub"
-            className="ml-auto flex h-9 shrink-0 items-center gap-2 rounded-full bg-white/[0.06] px-3 text-[14px] font-medium ring-1 ring-white/10 transition hover:bg-white/10 sm:ml-0 sm:px-4"
+            className="flex h-9 shrink-0 items-center gap-2 rounded-full bg-white/[0.06] px-3 text-[14px] font-medium ring-1 ring-white/10 transition hover:bg-white/10 sm:ml-0 sm:px-4"
           >
             <GitHubIcon className="h-4 w-4" /> <span className="hidden sm:inline">GitHub</span>
           </a>

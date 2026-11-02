@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Mascot } from '../components/Mascot';
-import { GitHubIcon } from '../components/icons';
+import { DiscordIcon, GitHubIcon } from '../components/icons';
 import { Fluted } from '../components/Fluted';
 import { ease } from '../components/ui';
 import abstract from '../assets/footer-abstract.avif';
-import { RELEASES, REPO } from '../lib/links';
+import { DISCORD, RELEASES, REPO } from '../lib/links';
 
 const COLUMNS = [
   {
@@ -32,6 +32,7 @@ const COLUMNS = [
       ['Source', REPO],
       ['Releases', RELEASES],
       ['Issues', `${REPO}/issues`],
+      ['Discord', DISCORD],
       ['MIT License', `${REPO}/blob/main/LICENSE`],
     ],
   },
@@ -73,6 +74,14 @@ export function Footer({ home = '' }: { home?: string }) {
               className="inline-flex h-10 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 text-[14px] font-medium text-white backdrop-blur-md transition hover:bg-white/20"
             >
               <GitHubIcon className="h-4 w-4" /> UseNestBot/Nest-Bot
+            </a>
+            <a
+              href={DISCORD}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex h-10 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 text-[14px] font-medium text-white backdrop-blur-md transition hover:bg-white/20"
+            >
+              <DiscordIcon className="h-4 w-4" /> Join the Discord
             </a>
             <a
               href={`${home}jits/`}
